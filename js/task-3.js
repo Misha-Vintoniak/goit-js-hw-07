@@ -16,23 +16,12 @@ const images = [
   },
 ];
 
-const imagesRef = document.querySelector('#gallery');
-
-const makeGalleryImgRef = array => {
-  return array.map(element => {
-    const elementRef = document.createElement('li');
-    elementRef.classList.add('item');
-
-    const imgRef = document.createElement('img');
-    imgRef.src = `${element.url}`;
-    imgRef.alt = `${element.alt}`;
-    imgRef.width = 450;
-    imgRef.height = 300;
-    elementRef.appendChild(imgRef);
-
-    return elementRef;
-  });
+const makeGallery = ({url, alt}) => {
+  return `<li class="item"><img class="image" src= "${url}", alt="${alt}" width="350" height="200"></li>`
 };
 
-const elements = makeGalleryImgRef(images);
-imagesRef.append(...elements);
+const gallaryImages = images.map(makeGallery).join(' ');
+
+const showImage = document.querySelector('#gallery')
+
+showImage.insertAdjacentHTML("beforeend" ,gallaryImages);
