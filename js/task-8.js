@@ -17,7 +17,7 @@ function createBoxes () {
         newItemDiv.style.height = (i * 10) + 20 + 'px';
         items.push(newItemDiv);
     }
-    boxes.after(... items);
+    boxes.append(... items);
 };
 
 const clearBoxes = () => {
@@ -27,7 +27,7 @@ const clearBoxes = () => {
   
 addBtn.addEventListener('click', createBoxes);
 clearBtn.addEventListener('click', clearBoxes);
-
+console.log(addBtn.parentNode);
 function randomColorRGB() {
     const random = (min, max) => Math.round(Math.random() * (max - min) + min);
 

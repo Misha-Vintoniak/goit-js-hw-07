@@ -1,9 +1,5 @@
-console.log("app6");
-const input = document.querySelector('#validation-input');
 
-// input.addEventListener('input', onInputEnter);
-// input.addEventListener('input', validInputEnter);
-// input.addEventListener('input', invalidInputEnter);
+const input = document.querySelector('#validation-input');
 
 const makeCheckValidation = event => {
     if (event.target.value.length === Number(input.dataset.length)) {
@@ -18,7 +14,6 @@ const makeCheckValidation = event => {
     };
 };
 
-// input.addEventListener('focus', makeCheckValidation);
-input.addEventListener('input', makeCheckValidation)
+input.addEventListener('blur', makeCheckValidation)
 console.log(makeCheckValidation);
 
